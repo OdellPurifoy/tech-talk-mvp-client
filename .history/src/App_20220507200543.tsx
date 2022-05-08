@@ -8,7 +8,6 @@ import {
   from,
 } from "@apollo/client";
 import { gql } from 'apollo-boost';
-import GetUsers from './components/getUsers';
 // import { onError } from '@apollo/client/link/error';
 
 const link = from([
@@ -20,10 +19,25 @@ const client = new ApolloClient({
   link: link
 });
 
+client
+  .query({
+    query: gql`
+      {
+        users {
+          firstName
+          lastName
+          email
+        }
+      }
+    `
+  })
+  .then(result => console.log(result));
+
+
 function App() {
   return (
     <ApolloProvider client={client}>
-      <GetUsers />
+      <div>Hello</div>
     </ApolloProvider>
   );
 }

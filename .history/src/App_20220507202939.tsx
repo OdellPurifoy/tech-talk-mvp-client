@@ -20,6 +20,21 @@ const client = new ApolloClient({
   link: link
 });
 
+client
+  .query({
+    query: gql`
+      {
+        users {
+          firstName
+          lastName
+          email
+        }
+      }
+    `
+  })
+  .then(result => console.log(result));
+
+
 function App() {
   return (
     <ApolloProvider client={client}>
