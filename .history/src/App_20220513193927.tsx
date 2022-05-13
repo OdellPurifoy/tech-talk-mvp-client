@@ -24,12 +24,12 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
       <Container>
+    <ApolloProvider client={client}>
         <AllPosts />
         <AllUsers />
-      </Container>
     </ApolloProvider>
+      </Container>
   );
 }
 

@@ -10,7 +10,6 @@ import {
 import { gql } from 'apollo-boost';
 import AllUsers from './components/AllUsers';
 import AllPosts from './components/AllPosts';
-import { Container } from 'react-bootstrap';
 // import { onError } from '@apollo/client/link/error';
 
 const link = from([
@@ -25,10 +24,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Container>
-        <AllPosts />
-        <AllUsers />
-      </Container>
+      <AllPosts />
+      <AllUsers />
     </ApolloProvider>
   );
 }

@@ -10,7 +10,7 @@ import {
 import { gql } from 'apollo-boost';
 import AllUsers from './components/AllUsers';
 import AllPosts from './components/AllPosts';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 // import { onError } from '@apollo/client/link/error';
 
 const link = from([
@@ -26,8 +26,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Container>
+        <Row>
+
         <AllPosts />
         <AllUsers />
+        </Row>
       </Container>
     </ApolloProvider>
   );
